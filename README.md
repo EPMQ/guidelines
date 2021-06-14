@@ -1,3 +1,3 @@
 # guidelines
 
-![build](https://github.com/EPMQ/master/actions/workflows/pylint.yml/badge.svg)
+![pylint](https://github.com/EPMQ/master/actions/workflows/pylint.yml/badge.svg)
