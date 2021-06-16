@@ -16,7 +16,9 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install pylint
+        python -m pip install pylint
+        if [ -f src/requirements.txt ]; then pip install -r src/requirements.txt; fi
     - name: Analysing the code with pylint
       run: |
-        find . -name '*.py' -exec pylint --fail-under=8 {} \;
+        pylint -j 0 --fail-under=8 src/infos
+        pylint -j 0 --fail-under=8 --disable=missing-docstring,redefined-outer-name src/tests
